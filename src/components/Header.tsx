@@ -37,8 +37,7 @@ function Header() {
        try{
         await AuthService.logout();
         dispatch(logout());
-        
-       toast.success("You are LOGGOUT!!!");
+        toast.success("You are LOGGOUT!!!");
        navigate('/')
     }
        catch(err){

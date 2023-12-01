@@ -39,8 +39,6 @@ const MoviesList = () => {
 
 
     useEffect(() => {
-
-
         // fetch(api).then(res => res.json()).then(data => {
         //     // console.log(data);
         //     // console.log(data.Search);
@@ -53,7 +51,6 @@ const MoviesList = () => {
         const dataFetch = async () => {
             const data = await MovieService.movies();
             setMovies(data);
-
         }
         dataFetch().catch(err => { console.log(err); navigate('/login'); });
     }, []);

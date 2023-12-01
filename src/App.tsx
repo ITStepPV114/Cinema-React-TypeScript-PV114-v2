@@ -52,6 +52,7 @@ function App() {
           <Route index element={<Home />} />
           <Route element={<ProtectedRoute />}>
             <Route path="movies" element={<MoviesList />} />
+            
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="Registration" element={<Registartion />} />

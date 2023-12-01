@@ -2,8 +2,17 @@ import axios from "axios";
 import { getTokenFromLocalStorage } from "../helpers/localStorage.helper";
 
 // створимо перехватчик запитів
+
+
+const instance = axios.create({
+  // до запиту буде прикріплюватися сщщлшуі
+  withCredentials: false,
+  baseURL: "https://cinema-api-pv114.azurewebsites.net/api/"
+});
+
+
 // який до кожного запиту додасть token із localStorage
-axios.interceptors.request.use(
+instance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -17,8 +26,4 @@ axios.interceptors.request.use(
 );
 
 
-export const instance = axios.create({
-  // до запиту буде прикріплюватися сщщлшуі
-  withCredentials: false,
-  baseURL: "https://cinema-api-pv114.azurewebsites.net/api/"
-});
+export default instance;

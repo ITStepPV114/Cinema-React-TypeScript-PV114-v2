@@ -1,5 +1,5 @@
 import { AnyAction } from "@reduxjs/toolkit";
-import { instance } from "../api/axios.api";
+import  instance  from "../api/axios.api";
 import { ILoginDto, IRegistrationDto } from "../types/user";
 import { removeTokenLoaclStorage } from "../helpers/localStorage.helper";
 
